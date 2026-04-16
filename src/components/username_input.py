@@ -5,8 +5,8 @@ from src.components.mandatory_field import MandatoryField
 class UsernameInput(ft.AlertDialog):
     def __init__(self):
         
-        self.done_button: ft.Button = ft.Button('Listo', disabled=True, align=ft.Alignment.CENTER)
-        self.username_field: MandatoryField = MandatoryField('Nombre de jugador', True, self.on_change_field)
+        self.username_field: MandatoryField = MandatoryField('Nombre de jugador', True, self.on_change_username_field)
+        self.done_button: ft.Button = ft.Button('Listo', disabled=True, align=ft.Alignment.CENTER, on_click=self.on_click_done_button)
         self.username_text: str | None = None
         
         super().__init__(
@@ -25,7 +25,7 @@ class UsernameInput(ft.AlertDialog):
             open=True
         )
 
-    def on_change_field(self):
+    def on_change_username_field(self):
         if self.username_field.is_unlocked:
             self.done_button.disabled = False
         else:
@@ -33,3 +33,6 @@ class UsernameInput(ft.AlertDialog):
             self.done_button.disabled = True
 
         self.update()
+
+    def on_click_done_button(self, e: ft.Event):
+        e.page.dis

@@ -22,12 +22,11 @@ class RoleDisplay(ft.AlertDialog):
             content=ft.Text(
                 f'La palabra secreta es: {word}' if word is not None 
                 else 'Descubre la palabra secreta.',
-                size=20
+                size=18
             ),
             actions=[self.accept_button],
             modal=True, 
             open=True,
-
         )
 
     async def unlock_accept_alert(self):
