@@ -1,13 +1,14 @@
 import flet as ft
 from src.client.player_request import PlayerRequest
 from src.components.role_display import RoleDisplay
+from src.components.username_input import UsernameInput
 
 from src.constants.const import CIVIL, IMPOSTOR
 
 
 class VisualClient(ft.Container):
     def __init__(self, identifier: int, ip_address: str = None, port: int = None):
-        super().__init__(content=   RoleDisplay(CIVIL, 'prueba'))
+        super().__init__(content=UsernameInput())
         self.__identifier: int = None
         self.__ip_address: str = None
         self.__port: int = None

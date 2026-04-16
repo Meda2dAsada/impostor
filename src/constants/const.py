@@ -1,5 +1,10 @@
 
 
+LOCKED_MODE_COLOR: str = '#FF0000'
+WAITING_MODE_COLOR: str = "#FF8800"
+UNLOCKED_MODE_COLOR: str = '#00FF00'
+
+
 CIVIL: str = 'civil'
 IMPOSTOR: str = 'impostor'
 

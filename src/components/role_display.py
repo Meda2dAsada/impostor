@@ -1,5 +1,5 @@
-import flet as ft
 import asyncio
+import flet as ft
 from src.constants.const import ROLE_COLORS, ROLE_BGCOLORS, ROLE_TEXT
 
 class RoleDisplay(ft.AlertDialog):
@@ -32,8 +32,8 @@ class RoleDisplay(ft.AlertDialog):
 
     async def unlock_accept_alert(self):
         await asyncio.sleep(5)
-        self.accept_button.disabled = False
 
+        self.accept_button.disabled = False
         self.page.update()
 
     def accept_alert(self, e: ft.Event):
