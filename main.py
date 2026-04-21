@@ -1,20 +1,22 @@
-import flet as ft
-from src.components.visual_client import VisualClient
-from src.components.role_display import RoleDisplay
+import customtkinter as ctk
+from src.components.visual_player import VisualPlayer
 
 
-async def main(page: ft.Page):
-    await page.window.center()
-    page.title = 'Impostor TCP'
+class GameApp(ctk.CTk):
+    def __init__(self):
+        super().__init__()
+        
+        self.title("Impostor TCP")
+        self.geometry("800x600")
+        
+        # Configurar tema
+        ctk.set_appearance_mode("dark")
+        ctk.set_default_color_theme("blue")
+        
+        # Crear VisualPlayer (maneja todo el flujo)
+        self.visual_player = VisualPlayer(self)
 
-    page.add(VisualClient(0))
 
-    page.update()
-
-
-
-
-if __name__ == '__main__':
-    ft.run(main)
-
-
+if __name__ == "__main__":
+    app = GameApp()
+    app.mainloop()
